@@ -1,0 +1,112 @@
+/* General Header Styles */
+.header {
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(0, 10, 40, 0);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensures header stays on top */
+}
+
+.header:hover {
+  background-color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease; /* Smooth transition for header background */
+}
+
+/* Make all child elements black on header hover */
+.header:hover .hamburger-menu,
+.header:hover .phone-icon {
+  filter: invert(0%) brightness(0); /* Makes the icon black */
+}
+
+.header:hover .lang {
+  color: black; /* Changes text color to black */
+  transition: color 0.3s ease;
+}
+
+.header:hover .book-button {
+  background-color: rgb(255, 255, 255);
+  color: black; /* Changes button text color to black */
+  border-color: black; /* Changes border color to black */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Left Header */
+.left-header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  height: 40px;
+  margin-left: 25px;
+  margin-right: 20px;
+}
+
+.lang {
+  color: rgb(255, 255, 255);
+}
+
+.logo {
+  padding: 5px;
+  height: 105px;
+}
+
+/* Right Header */
+.right-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Ensures content stays on the right */
+  flex: 1;
+  position: relative;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  color: black;
+  padding: 6px 10px;
+  font-size: 14px;
+  bottom: -0.15px; /* Position below the icon */
+  left: 0; /* Adjust positioning as needed */
+  opacity: 0; /* Hidden by default */
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap; /* Prevent line breaks */
+  z-index: 1001; /* Ensure tooltip appears above other elements */
+}
+
+.phone-icon {
+  height: 30px;
+  margin-left: 35px;
+}
+
+.phone-icon:hover + .tooltip {
+  opacity: 1;
+  pointer-events: auto; /* Enable interaction with tooltip on hover */
+}
+
+/* Book Button */
+.book-button {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  /*box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);*/
+  height: 30px;
+  width: 150px;
+  margin-left: 54px;
+  background-color: rgba(0, 10, 40, 0);
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.d-none {
+  display: none; /* Set default display here to none */
+}
